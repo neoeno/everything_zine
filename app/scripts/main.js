@@ -3,22 +3,23 @@
 $(function() {
   'use strict';
 
-  $('#mc-form').submit(function() {
-    $('#mc-form input').prop('disabled', true)
-  });
+  var $form = $('#mc-form'),
+      $formInput = $form.find('input[type=email]'),
+      $successMessage = $('[data-success]')
 
-  $('#mc-form').ajaxChimp({
-      url: 'http://xn--ault-feb.us8.list-manage.com/subscribe/post?u=58ea460a4c67e4f0690757646&id=2fc13e62df',
-      callback: function(resp) {
-        if (resp.result === 'success') {
-          $('#mc-form').animate({opacity: 0.0});
-          $('[data-success]').removeClass('hidden').animate({opacity: 1.0});
-        } else {
-          alert('Something’s wrong. Is your email ok?')
-          $('#mc-form input').prop('disabled', false)
-        }
-      }
+  $form.bind('submit', function(e){
+    e.preventDefault()
+    var email = $formInput.val()
+
+    $formInput.attr('disabled', true)
+    $formInput.attr('placeholder', 'Sending...')
+    $formInput.val('')
+    $.getJSON('http://xn--ault-feb.us8.list-manage.com/subscribe/post-json?u=58ea460a4c67e4f0690757646&id=2fc13e62df&c=?', {EMAIL: email}, function(){
+      $form.animate({opacity: 0.0})
+      $successMessage.removeClass('hidden').animate({opacity: 1.0})
+    })
   })
+
 
   var goto = ['kay', 'seagull.agency'].join('@');
   $('[data-email]').attr('href', ['mail','to:'].join('') + goto)
