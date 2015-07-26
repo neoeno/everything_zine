@@ -4,23 +4,14 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$r: 12px;
+
+@import "components/mixins";
+@import "components/banner";
+
 body {
   font-family: 'Helvetica Neue';
   font-weight: 300;
-}
-
-h1 {
-  font-size: 80px;
-  font-weight: 300;
-  line-height: 0.8;
-  margin-top: 10vh;
-  margin-bottom: 48px;
-  margin-left: -0.06em;
-}
-
-p {
-  font-size: 24px;
-  margin: 36px 0;
 }
 
 .submission-form {
