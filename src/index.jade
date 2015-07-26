@@ -1,0 +1,30 @@
+extends _layouts/base
+
+block content
+  .banner-container
+    .banner
+      h1.banner__heading is everything ok
+      p A monthly online publication.
+      p All submissions published.
+    .banner
+      h2.banner__heading issues
+      p
+        a.banner__link(href='#')
+          strong 003:
+          |  Jealousy
+      p
+        a.banner__link(href='#')
+          strong 002:
+          |  De
+      p
+        a.banner__link(href='#')
+          strong 001:
+          |  Peaches
+    .banner
+      h2.banner__heading subscribe
+      form.form-inline.banner__subscribe-form
+        input.form-control(type='email', placeholder='Put your email here...')
+        | &nbsp;
+        input.btn.btn-blue(type='submit', value='Go')
+      p
+        small We'll email you once or twice a month about new issues.
