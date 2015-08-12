@@ -1,10 +1,9 @@
 // Main javascript entry point
 // Should handle bootstrapping/starting application
 
-'use strict';
-
-import $ from 'jquery';
+import $ from 'jquery'
+import PieceExpander from '../_modules/piece-expander/piece-expander'
 
 $(() => {
-  console.log('Welcome to Yeogurt!');
-});
+  let pieceExpander = new PieceExpander(document)
+})

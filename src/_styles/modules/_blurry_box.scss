@@ -1,0 +1,14 @@
+$blurry-box-color: darkblue;
+$blurry-box-blur: 0.2px;
+
+@mixin blurry-box($border-width, $blur: $blurry-box-blur, $color: $blurry-box-color, $box-shadow: ()) {
+  border: $border-width solid $color;
+  box-shadow: inset 1px 1px $blur lighten($color, 20%),
+              1px 1px $blur lighten($color, 20%),
+              $box-shadow;
+}
+
+@mixin blurry-text($color: $blurry-box-color, $blur: $blurry-box-blur) {
+  color: $color;
+  text-shadow: 0px 0px $blur lighten($color, 20%);
+}

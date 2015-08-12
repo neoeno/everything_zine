@@ -142,11 +142,11 @@ gulp.task('imagemin', () => {
   let dest = path.join(__dirname, taskTarget, dirs.images.replace(/^_/, ''));
   return gulp.src(path.join(__dirname, dirs.source, dirs.images, '**/*.{jpg,jpeg,gif,svg,png}'))
     .pipe(plugins.changed(dest))
-    .pipe(gulpif(production, plugins.imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant({speed: 10})]
-    })))
+    // .pipe(gulpif(production, plugins.imagemin({
+    //   progressive: true,
+    //   svgoPlugins: [{removeViewBox: false}],
+    //   use: [pngquant({speed: 10})]
+    // })))
     .pipe(gulp.dest(dest));
 });
 

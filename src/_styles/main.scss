@@ -2,7 +2,13 @@
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 @import 'framework/framework';
+@import 'modules/typography';
+@import 'modules/blurry_box';
+@import 'modules/newspaper_grid';
 @import 'components/banner';
+@import 'components/main_container';
+@import 'components/newspaper';
+@import 'components/piece';
 
 // Styling on warning for users on IE7 or below
 .browsehappy {

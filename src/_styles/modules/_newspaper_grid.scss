@@ -1,0 +1,48 @@
+$cell-r: 24px;
+
+.newspaper-grid {
+  position: relative;
+  top: $r*2;
+}
+
+%grid-cell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: justify;
+}
+
+@for $i from 1 through 100 {
+  [data-grid-left="#{$i}"] {
+    @extend %grid-cell;
+    left: $cell-r*$i;
+  }
+
+  [data-grid-top="#{$i}"] {
+    @extend %grid-cell;
+    top: $cell-r*$i;
+  }
+
+  [data-grid-height="#{$i}"] {
+    @extend %grid-cell;
+    height: $cell-r*$i;
+  }
+
+  [data-grid-width="#{$i}"] {
+    @extend %grid-cell;
+    width: $cell-r*$i;
+  }
+}
+
+@for $i from 1 through 10 {
+  [data-grid-columns="#{$i}"] {
+    @extend %grid-cell;
+    -webkit-columns: auto $i;
+  }
+}
+
+[data-grid-foreground] {
+  @extend %grid-cell;
+  width: $cell-r*25;
+  height: auto;
+}
