@@ -2,8 +2,10 @@
 // Should handle bootstrapping/starting application
 
 import $ from 'jquery'
+import PiecePreview from '../_modules/piece-preview/piece-preview'
 import PieceExpander from '../_modules/piece-expander/piece-expander'
 
 $(() => {
-  let pieceExpander = new PieceExpander(document)
+  new PiecePreview(document)
+  // new PieceExpander(document)
 })

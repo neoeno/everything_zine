@@ -1,0 +1,43 @@
+.piece-reader {
+  max-width: 40em;
+  font-size: 18px;
+
+  .piece__author {
+    @include blurry-text;
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .piece__title {
+    @extend .piece__author;
+    font-size: 32px;
+    font-weight: 300;
+    word-wrap: break-word;
+    margin-bottom: 0.8em;
+  }
+
+  p {
+    margin: 0 0 1.42em;
+  }
+}
+
+.piece-reader--image {
+  max-width: 80%;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.piece-reader--hide-title {
+  .piece__author {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 0.8em;
+  }
+
+  .piece__title {
+    display: none;
+  }
+}

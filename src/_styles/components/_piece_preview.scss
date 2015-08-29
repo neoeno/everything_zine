@@ -1,8 +1,9 @@
-.piece {
-  padding: $r*1.5;
-}
+.piece-preview {
+  padding: 0 $r*1.5;
+  margin-bottom: $r*3;
+  height: 200px;
+  overflow: hidden;
 
-.piece:not(.piece--expanded) {
   %tiny-words {
     @include unselectable;
     font-size: 4px;
@@ -17,11 +18,18 @@
 
   p {
     @extend %tiny-words;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+  }
+
+  blockquote {
+    @extend %tiny-words;
+    margin-bottom: 4px;
+    border: 0;
+    padding: 0 0 0 8px;
   }
 
   .lines {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   .line {
@@ -53,30 +61,32 @@
       background-image: repeating-linear-gradient(-45deg, rgba(darkblue, 0.5), rgba(darkblue, 0.5) 1px, transparent 1px, transparent 5px);
     }
   }
-}
 
-.piece__author {
-  @include blurry-text;
-  margin-top: 0;
-  font-size: 24px;
-  font-weight: 500;
+  .piece__bio {
+    display: none;
+  }
 
-  .piece--expanded & {
+  .piece__author {
+    @include blurry-text;
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .piece__title {
+    @extend .piece__author;
     font-size: 18px;
+    font-weight: 300;
+    word-wrap: break-word;
   }
 }
 
-.piece__title {
-  @extend .piece__author;
-  font-size: 18px;
-  font-weight: 300;
-  word-wrap: break-word;
+.piece-preview__link {
+  &:hover, &:focus {
+    text-decoration: none;
 
-  .piece--expanded & {
-    font-size: 28px;
+    .piece__author, .piece__title {
+      text-decoration: underline;
+    }
   }
-}
-
-.piece__bio {
-  display: none;
 }

@@ -3,28 +3,42 @@ extends ../../_layouts/with_menu
 block main
   .newspaper-container
     .newspaper__col
-      .piece(data-piece)
-        include zovi_1
-      .piece(data-piece)
-        include joe_1
-      .piece(data-piece)
-        include riluri_1
+      a.piece-preview__link(href="/issues/001/kay_1.html")
+        .piece-preview(data-piece)
+          include text/kay_1
+      a.piece-preview__link(href="/issues/001/zovi_1.html")
+        .piece-preview(data-piece)
+          include text/zovi_1
+      a.piece-preview__link(href="/issues/001/joe_1.html")
+        .piece-preview(data-piece)
+          include text/joe_1
     .newspaper__col
-      .piece(data-piece)
-        include alexandra_1
-      .piece(data-piece)
-        include sean_1
-      .piece(data-piece)
-        include sean_2
+      a.piece-preview__link(href="/issues/001/alexandra_1.html")
+        .piece-preview(data-piece)
+          include text/alexandra_1
+      a.piece-preview__link(href="/issues/001/sean_1.html")
+        .piece-preview(data-piece)
+          include text/sean_1
+      a.piece-preview__link(href="/issues/001/sean_2.html")
+        .piece-preview(data-piece)
+          include text/sean_2
     .newspaper__col
-      .piece(data-piece)
-        include blare_1
-      .piece(data-piece)
-        include sean_3
-      .piece(data-piece)
-        include sean_4
+      a.piece-preview__link(href="/issues/001/blare_1.html")
+        .piece-preview(data-piece)
+          include text/blare_1
+      a.piece-preview__link(href="/issues/001/sean_3.html")
+        .piece-preview(data-piece)
+          include text/sean_3
+      a.piece-preview__link(href="/issues/001/sean_4.html")
+        .piece-preview(data-piece)
+          include text/sean_4
     .newspaper__col
-      .piece(data-piece)
-        include penny_1
-      .piece(data-piece)
-        include joe_2
+      a.piece-preview__link(href="/issues/001/penny_1.html")
+        .piece-preview(data-piece)
+          include text/penny_1
+      a.piece-preview__link(href="/issues/001/joe_2.html")
+        .piece-preview(data-piece)
+          include text/joe_2
+      a.piece-preview__link(href="/issues/001/riluri_1.html")
+        .piece-preview(data-piece)
+          include text/riluri_1
