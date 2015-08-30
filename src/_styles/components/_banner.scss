@@ -1,8 +1,10 @@
 .banner-container {
-  position: absolute;
-  left: $r*2;
-  top: $r*2;
-  width: $r*24;
+  @include media('sm') {
+    position: absolute;
+    left: $r*2;
+    top: $r*2;
+    width: $r*24;
+  }
 }
 
 .banner {
@@ -91,4 +93,12 @@
       left: 2px;
     }
   }
+}
+
+.banner__subscribe-success {
+  position: relative;
+  top: -96px;
+  opacity: 0;
+  height: 0;
+  z-index: -100;
 }

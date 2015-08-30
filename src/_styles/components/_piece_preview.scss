@@ -1,8 +1,12 @@
 .piece-preview {
   padding: 0 $r*1.5;
   margin-bottom: $r*3;
-  height: 200px;
   overflow: hidden;
+  max-height: 200px;
+
+  @include media('md') {
+    height: 200px;
+  }
 
   %tiny-words {
     @include unselectable;
@@ -94,9 +98,4 @@
       text-decoration: underline;
     }
   }
-}
-
-.piece-preview--issue-title {
-  // @include blurry-box($border-width: 2px);
-  // padding-right: 0;
 }

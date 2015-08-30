@@ -1,6 +1,11 @@
 .piece-reader {
   max-width: 40em;
   font-size: 18px;
+  padding: 0 1.4em;
+
+  @include media('sm') {
+    padding: 0;
+  }
 
   .piece__author {
     @include blurry-text;

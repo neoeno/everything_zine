@@ -17,10 +17,13 @@ head
     title is everything ok
     meta(property='og:image', content='http://everything.seagull.agency/images/opengraph.png')
     meta(property='og:site_name', content='is everything ok')
-    meta(property='og:url', content='http://everything.seagull.agency/')
     meta(property='og:type', content='website')
     meta(property='og:description', content='(yes)')
+      
+  block page_title
     meta(property='og:title', content='is everything ok')
+  block page_url
+    meta(property='og:url', content='http://everything.seagull.agency/')
     
   block stylesheets
     link(rel='stylesheet', href= config.baseUrl + 'styles/main.css')

@@ -1,5 +1,7 @@
 .main-container {
-  position: relative;
-  margin-left: $r*28;
-  margin-top: $r*3.5;
+  @include media('sm') {
+    position: relative;
+    margin-left: $r*28;
+    margin-top: $r*3.5;
+  }
 }
