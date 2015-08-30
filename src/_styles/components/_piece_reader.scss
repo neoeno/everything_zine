@@ -33,11 +33,21 @@
   }
 }
 
+.piece__bio {
+  font-size: 14px;
+  font-style: italic;
+}
+
 .piece-reader--image {
   max-width: 80%;
 
   img {
     max-width: 100%;
+  }
+
+  .piece__bio {
+    margin-top: $r*2;
+    max-width: 40em;
   }
 }
 
@@ -51,9 +61,4 @@
   .piece__title {
     display: none;
   }
-}
-
-.piece__bio {
-  font-size: 14px;
-  font-style: italic;
 }
