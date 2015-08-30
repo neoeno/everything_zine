@@ -16,6 +16,7 @@ import glob from 'glob';
 import browserify from 'browserify';
 import gulpif from 'gulp-if';
 import jade from 'jade';
+import buildBranch from 'gulp-build-branch';
 
 // Load all gulp plugins based on their names
 // EX: gulp-copy -> copy
@@ -172,7 +173,7 @@ gulp.task('browserify', () => {
 // Clean
 gulp.task('clean', del.bind(null, [
   path.join(__dirname, dirs.temporary),
-  path.join(__dirname, dirs.destination)
+  path.join(__dirname, dirs.destination, '**/*')
 ]));
 
 // Serve
@@ -274,23 +275,20 @@ gulp.task('test', (done) => {
   }, done);
 });
 
-// Deployment
+gulp.task('buildBranch:beta', function () {
+  return buildBranch({
+    folder: 'build',
+    branch: 'dist_beta'
+  });
+});
 
-// gulp.task('buildBranch:beta', function () {
-//   return $.buildBranch({
-//     folder: 'dist',
-//     branch: 'dist_beta'
-//   });
-// });
-//
-// gulp.task('buildBranch:live', function () {
-//   return $.buildBranch({
-//     folder: 'dist',
-//     branch: 'dist_live'
-//   });
-// });
-//
-// gulp.task('deploy:beta', ['buildBranch:beta']);
-// gulp.task('deploy:live', ['buildBranch:live']);
-// gulp.task('deploy', ['deploy:beta']);
-//
+gulp.task('buildBranch:live', function () {
+  return buildBranch({
+    folder: 'build',
+    branch: 'dist_live'
+  });
+});
+
+gulp.task('deploy:beta', ['buildBranch:beta']);
+gulp.task('deploy:live', ['buildBranch:live']);
+gulp.task('deploy', ['deploy:beta']);
