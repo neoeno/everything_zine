@@ -17,6 +17,12 @@
     margin-bottom: 0.8em;
   }
 
+  .piece__title--issue {
+    @extend .piece__author;
+    font-size: 32px;
+    margin-bottom: 0.8em;
+  }
+
   p {
     margin: 0 0 1.42em;
   }
@@ -40,4 +46,9 @@
   .piece__title {
     display: none;
   }
+}
+
+.piece__bio {
+  font-size: 14px;
+  font-style: italic;
 }

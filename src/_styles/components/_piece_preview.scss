@@ -79,6 +79,11 @@
     font-weight: 300;
     word-wrap: break-word;
   }
+
+  .piece__title--issue {
+    @extend .piece__author;
+    font-size: 36px;
+  }
 }
 
 .piece-preview__link {
@@ -89,4 +94,9 @@
       text-decoration: underline;
     }
   }
+}
+
+.piece-preview--issue-title {
+  // @include blurry-box($border-width: 2px);
+  // padding-right: 0;
 }
