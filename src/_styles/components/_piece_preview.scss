@@ -38,6 +38,7 @@
 
   .line {
     @extend %tiny-words;
+    display: block;
     margin-bottom: 0;
   }
 
