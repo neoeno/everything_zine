@@ -32,6 +32,13 @@
     padding: 0 0 0 8px;
   }
 
+  ul, li {
+    @extend %tiny-words;
+    margin-bottom: 4px;
+    border: 0;
+    padding: 0 0 0 8px;
+  }
+
   .lines {
     margin-bottom: 4px;
   }
