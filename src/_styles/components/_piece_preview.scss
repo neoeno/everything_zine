@@ -86,7 +86,8 @@
   }
 
   .piece__title {
-    @extend .piece__author;
+    @include blurry-text;
+    margin-top: 0;
     font-size: 18px;
     font-weight: 300;
     word-wrap: break-word;
@@ -100,6 +101,17 @@
     @extend .piece__author;
     font-size: 36px;
   }
+}
+
+.piece__new-label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-left: 4px;
+  color: red;
+  @include blurry-text(red);
+  vertical-align: super;
+  text-decoration: none !important;
 }
 
 .piece-preview__link {
