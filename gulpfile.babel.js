@@ -101,8 +101,7 @@ gulp.task('jade', () => {
     removeEmptyAttributes: true,
     removeRedundantAttributes: true
   }))
-  .pipe(gulp.dest(dest))
-  .pipe(browserSync.stream());
+  .pipe(gulp.dest(dest));
 });
 
 // Sass compilation
@@ -257,23 +256,9 @@ gulp.task('serve', [
       gulp.watch([
         path.join(__dirname, dirs.source, dirs.images, '**/*.{jpg,jpeg,gif,svg,png}')
       ], ['imagemin']);
-
-      // All other files
-      gulp.watch([
-        path.join(__dirname, dirs.temporary, '**/*')
-      ]).on('change', browserSync.reload);
     }
   }
 );
-
-// Testing
-gulp.task('test', (done) => {
-  karma.start({
-    configFile: path.join(__dirname, '/karma.conf.js'),
-    singleRun: !watch,
-    autoWatch: watch
-  }, done);
-});
 
 gulp.task('buildBranch:beta', function () {
   return buildBranch({
